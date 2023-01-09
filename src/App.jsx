@@ -2,7 +2,7 @@ import HomePage from './pages/HomePage'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  max-width: 100rem;
+  max-width: 120rem;
   margin: auto;
 `
 
