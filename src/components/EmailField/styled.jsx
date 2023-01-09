@@ -1,7 +1,6 @@
 import styled from "styled-components"
-import mailIcon from "../assets/mail-icon.svg"
 
-const Email = styled.div`
+export const Email = styled.div`
   display: flex;
   box-shadow: 0 .5rem 1.5rem #0000003e;
   min-width: max-content;
@@ -32,18 +31,10 @@ const Email = styled.div`
     color: white;
     background-color: var(--light-orange);
     border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    filter: contrast(1.1);
   }
 `
-
-export default function EmailField() {
-
-  return (
-    <Email>
-      <div className="input-wrapper">
-        <img src={mailIcon} alt="imagem de uma carta" />
-        <input type="text" placeholder="Insira seu e-mail" />
-      </div>
-      <button>Assinar newsletter</button>
-    </Email>
-  )
-}
