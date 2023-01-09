@@ -1,4 +1,4 @@
-import mailIcon from "../../assets/mail-icon.svg"
+import mailIcon from "../../assets/icons/mail-icon.svg"
 import { Email } from "./styled"
 
 export default function EmailField() {

@@ -1,10 +1,8 @@
 import EmailField from "../EmailField";
-import plantaImg from "../../assets/planta.png"
-
 import Title from "../Title";
 import { Container, Main } from "./styled";
 
-
+import plantaImg from "../../assets/images/planta.png"
 
 export default function AssinaturaNewsletter() {
   return (
@@ -16,9 +14,9 @@ export default function AssinaturaNewsletter() {
         </p>
         <EmailField />
       </Main>
-      <div className="aside">
+      <aside>
         <img src={plantaImg} alt="imagem de um pé de caju, com as follhas bem verdinhas" />
-      </div>
+      </aside>
     </Container>
   )
 }

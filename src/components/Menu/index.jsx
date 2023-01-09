@@ -1,4 +1,4 @@
-import logo from '../../assets/logo-casa-verde.svg'
+import logo from '../../assets/icons/logo-casa-verde.svg'
 import { Header, Ul } from './styled'
 
 

@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Email = styled.div`
   display: flex;
-  box-shadow: 0 .5rem 1.5rem #0000003e;
+  box-shadow: var(--default-box-shadow);
   min-width: max-content;
 
   * {

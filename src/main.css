@@ -12,11 +12,12 @@
   --text-gray: #202020;
   --light-orange: #FFCB47;
   --body-bg-color: #FAFAFA;
+  --default-box-shadow: 1rem 1rem 3rem #0000000F;
 }
 
 body {
   background-color: var(--body-bg-color);
-  background-image: url(/src/assets/background-bubble.png);
+  background-image: url(/src/assets/images/background-bubble.png);
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 70rem;
