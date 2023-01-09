@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
-export const ContainerSection = styled.section`
+export const Section = styled.section`
   margin-top: -6rem;
   display: flex;
   box-shadow: var(--default-box-shadow);
 
 
-  img {
+  aside {
     flex: 3;
+  }
+
+  aside img {
+    height: 100%;
   }
 
   article {

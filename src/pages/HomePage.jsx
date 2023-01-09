@@ -1,6 +1,7 @@
 import AssinaturaNewsletter from "../components/AssinaturaNewsletter";
 import ComoFazer from "../components/ComoFazer";
 import Menu from "../components/Menu";
+import Ofertas from "../components/Ofertas";
 
 export default function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default function HomePage() {
       <Menu />
       <AssinaturaNewsletter />
       <ComoFazer />
+      <Ofertas />
     </>
   )
 

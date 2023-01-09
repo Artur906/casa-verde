@@ -1,12 +1,14 @@
 import Title from "../Title";
 import sideImage from "../../assets/images/planta-section-como-fazer.png"
-import { ContainerSection } from "./styled";
+import { Section } from "./styled";
 
 export default function ComoFazer() {
 
   return (
-    <ContainerSection>
-      <img src={sideImage} alt="planta bunita" />
+    <Section>
+      <aside>
+        <img src={sideImage} alt="planta bunita" />
+      </aside>
       <article>
         <Title smallTitle="Como conseguir" mainTitle={<h2>minha planta</h2>} />
         <ul>
@@ -15,6 +17,6 @@ export default function ComoFazer() {
           <li>Aguarde na sua casa</li>
         </ul>
       </article>
-    </ContainerSection>
+    </Section>
   )
 }
