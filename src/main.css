@@ -22,18 +22,6 @@ body {
   background-size: 70rem;
 }
 
-h1, h2, h3, p, li {
-  color: var(--text-gray);
-}
-
-h1, h2, h3 {
-  font-family: 'Elsie Swash Caps', cursive;
-}
-
-h1 {
-  font-size: 8.2rem;
-}
-
 p {
   font-size: 1.6rem;
   opacity: 0.5;
