@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Email = styled.div`
   display: flex;
-  box-shadow: var(--default-box-shadow);
+  box-shadow: ${props => (props.showErrorMessage ? `1rem 1rem 3rem #ff0000a4` : `var(--default-box-shadow)`)};
   min-width: max-content;
 
   * {
@@ -17,10 +17,13 @@ export const Email = styled.div`
     display: flex;
     align-items: center;
     gap: 1.6rem;
+
+    
   }
 
   .input-wrapper input {
     border: none;
+    outline: none;
   }
 
   button {
@@ -37,4 +40,9 @@ export const Email = styled.div`
   button:hover {
     filter: contrast(1.1);
   }
+`
+
+export const ErrorMessage = styled.p`
+  color: red;
+  font-weight: bold;
 `
