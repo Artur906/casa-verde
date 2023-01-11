@@ -1,45 +1,34 @@
-import { useState } from "react"
 import { Email, ErrorMessage } from "./styled"
+import { useForm } from "react-hook-form"
+import * as yup from "yup"
+import { yupResolver } from "@hookform/resolvers/yup"
 
 import mailIcon from "../../assets/icons/mail-icon.svg"
 
-
-
 export default function EmailField() {
-  const [email, setEmail] = useState("")
-  const [isButtonActive, setIsButtonActive] = useState(false)
-  const [showErrorMessage, setShowErrorMessage] = useState(false)
+  const schema = yup.object().shape({
+    email: yup.string().email("Informe um email válido")
+  })
 
-  const handleEmailValidation = (value) => {
-    setEmail(email => value)
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema)
+  })
 
-    const isEmailValid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
-    isEmailValid ? setIsButtonActive(true) : setIsButtonActive(false)
-  }
-
-  const handleSubscriptionButton = () => {
-    if (!isButtonActive) {
-      setShowErrorMessage(true)
-      return
-    }
-
-    alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`)
+  const onSubmit = () => {
+    alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail`)
   }
 
   return (
-    <>
-      <Email showErrorMessage={showErrorMessage} >
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Email showErrorMessage={errors.email ? true : false} >
         <div className="input-wrapper">
           <img src={mailIcon} alt="imagem de uma carta" />
-          <input type="email" autoComplete="true" placeholder="Insira seu e-mail" onChange={e => {
-            handleEmailValidation(e.target.value)
-            setShowErrorMessage(false)
-          }} />
+          <input type="email" placeholder="Insira seu e-mail" {...register("email")} />
         </div>
 
-        <button onClick={handleSubscriptionButton}>Assinar newsletter</button>
+        <input type="submit" formNoValidate value="Assinar newsletter" />
       </Email>
-      {showErrorMessage && <ErrorMessage>Informe um email válido</ErrorMessage>}
-    </>
+      {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
+    </form>
   )
 }

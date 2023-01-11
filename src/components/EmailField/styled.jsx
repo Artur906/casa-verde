@@ -26,7 +26,7 @@ export const Email = styled.div`
     outline: none;
   }
 
-  button {
+  input[type="submit"] {
     flex: 1;
     flex-shrink: 0;
     min-width: fit-content;
