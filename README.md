@@ -3,4 +3,4 @@ Projeto criado durante o [7-days-of-code](https://7daysofcode.io/) da alura, eu 
 
 Por enquanto ele está assim: 
 
-![](./public/showing-my-progress.gif)
+![](./public/updating-my-progress.gif)
