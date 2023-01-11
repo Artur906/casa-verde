@@ -2,20 +2,28 @@ import { Email, ErrorMessage } from "./styled"
 import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
+import { ModalContext } from "../AssinaturaNewsletter"
+import { useContext } from "react"
 
 import mailIcon from "../../assets/icons/mail-icon.svg"
 
 export default function EmailField() {
+  const { setUserEmail, setShowModal } = useContext(ModalContext)
   const schema = yup.object().shape({
-    email: yup.string().email("Informe um email válido")
+    email: yup.string().email("Informe um email válido").required("Informe um email")
   })
-
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors }
+  } = useForm({
     resolver: yupResolver(schema)
   })
 
   const onSubmit = () => {
-    alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail`)
+    setUserEmail(watch("email"))
+    setShowModal(true)
   }
 
   return (
