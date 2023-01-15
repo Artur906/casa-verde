@@ -40,6 +40,13 @@ export const Email = styled.div`
   button:hover {
     filter: contrast(1.1);
   }
+
+  @media screen and (max-width: 600px){
+    & {
+      min-width: none;
+      flex-direction: column;
+    }
+  }
 `
 
 export const ErrorMessage = styled.p`

@@ -10,4 +10,5 @@ export const OfertasElements = styled.div`
   flex-wrap: wrap;
   width: 100%;
   gap: 3.1rem;
+  justify-content: center;
 `

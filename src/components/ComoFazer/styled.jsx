@@ -45,4 +45,22 @@ export const Section = styled.section`
     margin-right: 1.6rem;
     border-radius: 5rem ;
   }
+
+  @media screen and (max-width: 800px) {
+    aside {
+      display: none;
+    }
+
+    article {
+      width: fit-content;
+    }
+
+    & {
+      display: block;
+      align-items: center;
+      width: 100vw;
+      margin: auto;
+    }
+
+  }
 `

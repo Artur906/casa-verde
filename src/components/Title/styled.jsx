@@ -17,6 +17,12 @@ export const ComposeTitle = styled.div`
   h3 {
     font-size: 3.2rem;
   }
+
+  @media screen and (max-width: 600px){
+    h1{
+      font-size: 6rem;
+    }
+  }
 `
 
 export const Span = styled.span`

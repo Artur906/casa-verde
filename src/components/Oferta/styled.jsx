@@ -43,4 +43,10 @@ export const OfertaStyled = styled.div`
     color: var(--light-orange);
     cursor: pointer;
   }
+
+  @media screen and (max-width: 500px) {
+    & {
+      width: fit-content;
+    }
+  }
 `

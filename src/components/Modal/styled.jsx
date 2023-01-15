@@ -44,6 +44,12 @@ export const StyledModal = styled.div`
     max-width: 90%;
     font-weight: bold;
   }
+
+  @media screen and (max-width: 700px) {
+    & {
+      max-width: 90vw;
+    }
+  }
 `
 
 export const BlurBackground = styled.div`

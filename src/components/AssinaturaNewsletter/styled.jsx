@@ -7,6 +7,17 @@ export const Section = styled.section`
   aside {
     flex: 1;
   }
+
+  @media screen and (max-width: 800px) {
+    aside {
+      display: none;
+    }
+
+    & {
+      display: block;
+      min-width: 100%;
+    }
+  }
 `
 
 export const Main = styled.main`
@@ -19,11 +30,26 @@ export const Main = styled.main`
   }
 
   h1, p {
-    max-width: 49rem;
+    width: 49rem;
   }
 
   p{
     margin: 2.4rem 0 3.4rem 0;
     line-height: 2.6rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    p, h1 {
+      will-change: contents;
+      width: auto;
+    }
+
+    & {
+      padding: 2rem;
+      max-width: 100%;
+
+      margin: auto;
+      margin-top: 10rem;
+    }
   }
 `
