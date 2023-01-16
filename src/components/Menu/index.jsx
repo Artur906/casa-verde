@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import logo from '../../assets/icons/logo-casa-verde.svg'
-import { Header, Ul } from './styled'
+import { Header, Ul, ToggleMenuButton } from './styled'
 
 
 export default function Menu() {
@@ -32,23 +32,7 @@ export default function Menu() {
           <li><a href='#'>Meu carrinho</a></li>
         </Ul>
       </nav>
-      {menuActive ? (
-        <button className='toggle-menu-button' onClick={handleToggleMenu}>
-          <svg viewBox="0 0 100 80" width="40" height="40">
-            <rect width="100" height="10"></rect>
-            <rect y="30" width="100" height="10"></rect>
-            <rect y="60" width="100" height="10"></rect>
-          </svg>
-        </button>
-      ) : (
-        <button className='toggle-menu-button' onClick={handleToggleMenu} >
-          <svg viewBox="0 0 100 80" width="40" height="40">
-            <rect width="100" height="10"></rect>
-            <rect y="30" x="30" width="70" height="10"></rect>
-            <rect y="60" x="60" width="40" height="10"></rect>
-          </svg>
-        </button>
-      )}
+      <ToggleMenuButton className={menuActive ? 'active' : ''} onClick={handleToggleMenu} />
     </Header>
   )
 }

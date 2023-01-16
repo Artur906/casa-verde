@@ -6,10 +6,6 @@ export const Header = styled.header`
   justify-content: space-between;
   padding: 2rem 2rem;
 
-  .toggle-menu-button {
-    display: none;
-  }
-
   @media screen and (max-width: 900px){
     & {
       position: fixed;
@@ -18,20 +14,58 @@ export const Header = styled.header`
       background-color: var(--light-orange);
       width: 100%;
     }
-    .toggle-menu-button {
+
+    
+  }
+`
+
+export const ToggleMenuButton = styled.button`
+  display: none;
+  z-index: 1000;
+
+  width: 4rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  position: relative;
+
+  
+  &.active::after, &.active::before, &::after, &::before {
+    content: "";
+    width: 100%;
+    transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: .5rem;
+    background-color: black;
+    display: block;
+    position: absolute;
+    border-radius: .8rem;
+  }
+  &::before {
+    top: 0;
+    right: 0;
+  }
+  &::after {
+    width: 60%;
+    bottom: 0;
+    right: 0;
+  }
+
+  &.active::before {
+    rotate: -135deg;
+  }
+
+  &.active::after {
+    top: 0;
+    rotate: 135deg;
+  }
+
+  @media screen and (max-width: 900px) {
+    & {
       display: block;
-      z-index: 1000;
-      position: fixed;
-      top: 2rem;
-      right: 2rem;
-
-      background-color: transparent;
-      border: none;
-
-      transition: all .5s ease-in ;
     }
   }
 `
+
 
 export const Ul = styled.ul`
   list-style: none;
